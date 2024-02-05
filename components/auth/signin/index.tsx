@@ -1,13 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
 import { isEmail, useForm } from "@mantine/form";
 import { validateString } from "@/helpers/common";
 import { TextInput, PasswordInput } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { AuthService } from "@/services/auth/authService";
-import { redirect } from "next/navigation";
+import { AuthService } from "@/services/authService";
 import { useRouter } from "next/navigation";
+import Tokenhelper from "@/helpers/Token.helper";
 
 const SignIn = () => {
   const navigate = useRouter();
@@ -32,7 +31,10 @@ const SignIn = () => {
       // console.log(res?.data);
       const data = await res?.data;
       if (data) {
-        console.log(data);
+        // console.log(data);
+        Tokenhelper.createToken(data?.refreshToken);
+        Tokenhelper.createUser(data?.user);
+        Tokenhelper.createRole(data?.role);
         navigate.replace("dashboard");
       }
     }
@@ -96,14 +98,13 @@ const SignIn = () => {
                 <div className="mb-5">
                   <button
                     type="submit"
-                    onClick={() => SignIn()}
                     className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
                   >
                     Sign In
                   </button>
                 </div>
                 <div className="mt-5 mb-5.5 flex items-center justify-between">
-                  <Link href="/add-studio" className="text-sm text-primary">
+                  <Link href="/create-studio" className="text-sm text-primary">
                     Create Studio
                   </Link>
                   <Link

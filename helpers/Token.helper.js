@@ -2,6 +2,7 @@ class TokenHelperClass {
   constructor() {
     this.accessToken = "panel-token";
     this.user = "user";
+    this.role = "role";
   }
   getToken = () => {
     if (typeof window !== "undefined")
@@ -25,6 +26,17 @@ class TokenHelperClass {
   deleteUser = () => {
     if (typeof window !== "undefined")
       return localStorage.removeItem(this.user);
+  };
+  getRole = () => {
+    if (typeof window !== "undefined") return localStorage.getItem(this.role);
+  };
+  createRole = (role) => {
+    if (typeof window !== "undefined")
+      return localStorage.setItem(this.role, role);
+  };
+  deleteRole = () => {
+    if (typeof window !== "undefined")
+      return localStorage.removeItem(this.role);
   };
 }
 

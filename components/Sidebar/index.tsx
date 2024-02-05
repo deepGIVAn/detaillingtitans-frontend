@@ -134,7 +134,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       <Link
                         href="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === "/dashboard/studios/add-studio" ||
+                          (pathname === "/dashboard/studios/create-studio" ||
                             pathname === "/dashboard/studios") &&
                           "bg-graydark dark:bg-meta-4"
                         }`}
@@ -171,9 +171,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                           <li>
                             <Link
-                              href="/dashboard/studios/add-studio"
+                              href="/dashboard/studios/create-studio"
                               className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
-                                pathname === "/dashboard/studios/add-studio" &&
+                                pathname ===
+                                  "/dashboard/studios/create-studio" &&
                                 "text-white"
                               }`}
                             >
@@ -210,7 +211,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                       <Link
                         href="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === "/dashboard/warranties/add-warranty" ||
+                          (pathname ===
+                            "/dashboard/warranties/create-warranty" ||
                             pathname === "/dashboard/warranties") &&
                           "bg-graydark dark:bg-meta-4"
                         }`}
@@ -247,10 +249,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                           <li>
                             <Link
-                              href="/dashboard/warranties/add-warranty"
+                              href="/dashboard/warranties/create-warranty"
                               className={`group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
                                 pathname ===
-                                  "/dashboard/warranties/add-warranty" &&
+                                  "/dashboard/warranties/create-warranty" &&
                                 "text-white"
                               }`}
                             >
@@ -270,9 +272,10 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </li>
                           <li>
                             <Link
-                              href=""
+                              href="/e-warranty/e-warranty-details"
                               className={`first-letter:group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ${
-                                pathname === "" && "text-white"
+                                pathname === "/e-warranty/e-warranty-details" &&
+                                "text-white"
                               }`}
                             >
                               Check Warranty

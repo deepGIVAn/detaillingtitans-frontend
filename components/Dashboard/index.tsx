@@ -1,7 +1,8 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import CardDataStats from "../CardDataStats";
 import dynamic from "next/dynamic";
+import { StudioService } from "@/services/studioService";
 
 const Dashboard: React.FC = () => {
   return (
